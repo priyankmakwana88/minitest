@@ -2,9 +2,13 @@
 
 import socket
 
+import netifaces
 
+
+ip=netifaces.ifaddresses("wlp9s0")[netifaces.AF_INET][0]['addr']
+#ip =ni.ifaddresses("eth0")[ni.AF_INET][0]['addr']
 s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-ip="127.0.0.1"
+#ip="127.0.0.1"
 port=8888
 
 

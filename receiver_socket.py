@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 
 import socket
+import netifaces as ni
 
-recv_ip='127.0.0.1'
+
+recv_ip=ni.ifaddresses("wlp9s0")[ni.AF_INET][0]['addr']
+#recv_ip =ni.ifaddresses("eth0")[ni.AF_INET][0]['addr']
+
+
 port=8888
 
 

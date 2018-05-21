@@ -62,7 +62,7 @@ for i in (0,1):
 	
 	for i in range(0,len(hi)):
 		total_hi=total_hi+hi[i]
-	for i in range(0,len(hi)):
+	for i in range(0,len(hello)):
 		total_hello=total_hello+hello[i]
 	del hi[:]
 	del hello[:]
@@ -72,14 +72,24 @@ for i in (0,1):
 	
 print(total_hi_list)
 print(total_hello_list)
+print(total_hi_list[1])
+print(total_hello_list[1])
 	
 #DRAWING GRAPH
-plt.title("no('HI') vs no('HELLO')")
+plt.figure(1)
+plt.subplot(131)
+plt.suptitle("no('HI') vs no('HELLO') - PHASE 1")
 plt.xlabel("no('HI')")	
 plt.ylabel("no('HELLO')")
-plt.plot(total_hi_list,total_hello_list)
+plt.bar(total_hi_list[0],total_hello_list[0])
 plt.show()
 
+plt.subplot(132)
+plt.title("no('HI') vs no('HELLO') - PHASE 2")
+plt.xlabel("no('HI')")	
+plt.ylabel("no('HELLO')")
+plt.bar	(total_hi_list[1],total_hello_list[1],color='r')
+plt.show()
 
 	
 

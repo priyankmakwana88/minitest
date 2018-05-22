@@ -19,6 +19,10 @@ html_source=page.text
 soup=BeautifulSoup(html_source,'html.parser')
 sorted_page=soup.prettify()
 
+print(sorted_page)
+
+
+'''
 #FINDING LINKS
 del_pos=[]
 
@@ -50,6 +54,8 @@ while sorted_page.find('<cite') >0:
 	print('')
 	#link_final=''
 	sorted_page=sorted_page[end_cite_pos+6:]
+'''
+
 
 '''
 for link in soup.find_all('a'):

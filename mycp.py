@@ -47,6 +47,23 @@ if not dest_file_name:
 	dest_file=dest_loc+source_file_name
 	
 
+#COPY FILE FUNCTION
+def copy_file(source_file_name,dest_file):
+
+	#READING SOURCE FILE
+	source_f=open(source_file_name)
+	data_source=source_f.read()
+	source_f.close()
+	
+	#CREATING DESTINATION FILE
+	dest_f=open(dest_file,'w')
+	dest_f.write(data_source)
+	dest_f.close()
+
+#DIRECTORY COPY FUNCTION
+def copy_dir(dest_path):
+	mkdir(dest_path)
+	
 
 #CHECKING FOR SOURCE FILE EXISTANCE
 if os.path.exists(source_file):
@@ -58,21 +75,14 @@ if os.path.exists(source_file):
 		if os.path.isdir(source_file):		
 			
 			#COPYING DIRECTORY	
-			print("Directory copy successful!!!")
-			mkdir(dest_file)
+			#print("Directory copy successful!!!")
+			copy_dir(dest_file)
+			
 				
 		else:
 			#COPYING FILE
 			print("Copy successful!!!")
-			#READING SOURCE FILE
-			source_f=open(source_file_name)
-			data_source=source_f.read()
-			source_f.close()
-			
-			#CREATING DESTINATION FILE
-			dest_f=open(dest_file,'w')
-			dest_f.write(data_source)
-			dest_f.close()
+			copy_file(source_file_name,dest_file)
 						
 
 	else:

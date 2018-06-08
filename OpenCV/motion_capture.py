@@ -25,8 +25,8 @@ gray3=cv2.GaussianBlur(gray3, (21, 21), 0)
 
 while 1:
 	new_img=image_diff(gray1,gray2,gray3)
-	thresh = cv2.threshold(new_img, 10, 255, cv2.THRESH_BINARY)[1]	#min-25
-	thresh = cv2.dilate(thresh, None, iterations=1)			#iteration-2
+	thresh = cv2.threshold(new_img, 18, 255, cv2.THRESH_BINARY)[1]	#min-25
+	#thresh = cv2.dilate(thresh, None, iterations=1)		#iteration-2
 	cv2.imshow('motion',thresh)
 	
 	status,frame=cam.read()
